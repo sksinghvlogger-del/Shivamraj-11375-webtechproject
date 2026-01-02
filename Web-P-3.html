@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FreshMart Grocery Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== INTERNAL CSS ===== -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            background-color: white;
+            color: #2e8b57;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .products {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>FreshMart Grocery Store</h1>
+    <p>Fresh • Affordable • Reliable</p>
+
+    <nav>
+        <button onclick="showMessage()">Welcome</button>
+        <button onclick="changeTheme()">Change Theme</button>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About Us</h2>
+        <p id="aboutText">
+            We provide fresh groceries and daily essentials at best prices.
+        </p>
+        <button onclick="updateAbout()">Update About Text</button>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section>
+        <h2>Products</h2>
+
+        <div class="products">
+            <div class="product">
+                <h3>Rice</h3>
+                <p>₹60 / Kg</p>
+                <button onclick="addToCart('Rice')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h3>Milk</h3>
+                <p>₹50 / Liter</p>
+                <button onclick="addToCart('Milk')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <h3>Apple</h3>
+                <p>₹120 / Kg</p>
+                <button onclick="addToCart('Apple')">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CART -->
+    <section>
+        <h2>Cart</h2>
+        <p id="cartItems">No items added</p>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section>
+        <h2>Contact Us</h2>
+
+        <form onsubmit="return validateForm()">
+            <label>Name:</label><br>
+            <input type="text" id="name"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" id="email"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 FreshMart Grocery Store</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    let cart = [];
+
+    function showMessage() {
+        alert("Welcome to FreshMart Grocery Store!");
+    }
+
+    function updateAbout() {
+        document.getElementById("aboutText").innerHTML =
+            "We offer fresh products, fast delivery, and best customer service.";
+    }
+
+    function addToCart(item) {
+        cart.push(item);
+        document.getElementById("cartItems").innerHTML =
+            "Items in Cart: " + cart.join(", ");
+    }
+
+    function clearCart() {
+        cart = [];
+        document.getElementById("cartItems").innerHTML = "No items added";
+    }
+
+    function changeTheme() {
+        document.body.style.backgroundColor =
+            document.body.style.backgroundColor === "lightyellow"
+            ? "#f4f6f8"
+            : "lightyellow";
+    }
+
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        if (name === "" || email === "") {
+            alert("Please fill all fields");
+            return false;
+        }
+
+        alert("Form submitted successfully!");
+        return true;
+    }
+</script>
+
+</body>
+</html>

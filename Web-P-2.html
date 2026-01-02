@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FreshMart Grocery Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== INTERNAL CSS ===== -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #2e8b57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* ===== BOX MODEL ===== */
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #2e8b57;
+        }
+
+        /* ===== FLEX LAYOUT ===== */
+        .products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        /* ===== TABLE STYLING ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2e8b57;
+            color: white;
+        }
+
+        /* ===== FORM STYLING ===== */
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 600px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>FreshMart Grocery Store</h1>
+    <p>Fresh • Affordable • Reliable</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#price">Price List</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            FreshMart Grocery Store provides fresh vegetables, fruits,
+            dairy products, and daily essentials at affordable prices.
+        </p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <h2>Our Products</h2>
+
+        <div class="products">
+            <div class="product-card">
+                <h3>Rice</h3>
+                <p>₹60 per Kg</p>
+            </div>
+
+            <div class="product-card">
+                <h3>Milk</h3>
+                <p>₹50 per Liter</p>
+            </div>
+
+            <div class="product-card">
+                <h3>Apple</h3>
+                <p>₹120 per Kg</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICE TABLE -->
+    <section id="price">
+        <h2>Price List</h2>
+
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price (₹)</th>
+            </tr>
+            <tr>
+                <td>Rice</td>
+                <td>1 Kg</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Milk</td>
+                <td>1 Liter</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>1 Kg</td>
+                <td>120</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+            <label>Name:</label>
+            <input type="text">
+
+            <label>Email:</label>
+            <input type="email">
+
+            <label>Message:</label>
+            <textarea rows="4"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 FreshMart Grocery Store</p>
+</footer>
+
+</body>
+</html>
